@@ -1,0 +1,8 @@
+agent:
+  queue: "carlos"
+
+steps:
+  - label: ":pipeline: Pipeline upload"
+    command: buildkite-agent pipeline upload
+  - label: "Step 1"
+    command: echo "Hello world!"
