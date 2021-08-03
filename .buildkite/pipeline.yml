@@ -2,5 +2,7 @@ agents:
   queue: "carlos"
 
 steps:
-  - label: "Step 1"
-    command: echo "Hello world!"
+  - label: "Unit test"
+    command: go test ./... -v -timeout -1
+  - label: "Build"
+    command: go build .
