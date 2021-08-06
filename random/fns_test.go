@@ -22,7 +22,7 @@ func TestAdd(t *testing.T) {
 	}
 }
 
-func TestFlacky(t *testing.T) {
+func TestFlaky(t *testing.T) {
 	r := rand.New(rand.NewSource(time.Now().UnixNano()))
 	if n := r.Intn(100); n > 75 {
 		t.Log(n)
