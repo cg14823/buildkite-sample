@@ -24,8 +24,7 @@ func TestAdd(t *testing.T) {
 
 func TestFlaky(t *testing.T) {
 	r := rand.New(rand.NewSource(time.Now().UnixNano()))
-	if n := r.Intn(100); n > 50 {
-		t.Log(n)
+	if n := r.Intn(100); n > 5 {
 		t.Fail()
 	}
 }
