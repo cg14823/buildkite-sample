@@ -17,3 +17,4 @@ steps:
   - wait
   - trigger: down-stream-pipeline
     label: "Triggering down stream :pipeline:"
+    async: true
