@@ -14,3 +14,6 @@ steps:
     command: go build .
     concurrency_group: buildkite-sample/go-tasks
     concurrency: 1
+  - wait
+  - trigger: down-stream-pipeline
+    label: "Triggering down stream :pipeline:"
