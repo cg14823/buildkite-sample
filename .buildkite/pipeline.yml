@@ -14,12 +14,3 @@ steps:
     command: go build .
     concurrency_group: buildkite-sample/go-tasks
     concurrency: 1
-  - wait
-  - label: "Fail"
-    command: ls /does-not-exist
-    concurrency: 3
-    concurrency_group: buildkite-sample/test-retries
-  - label: "Sleep"
-    command: sleep 50
-    concurrency: 3
-    concurrency_group: buildkite-sample/test-retries
