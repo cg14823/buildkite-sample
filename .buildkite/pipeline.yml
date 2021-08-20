@@ -11,16 +11,9 @@ steps:
     concurrency: 1
     concurrency_group: buildkite-sample/go-tasks
   - label: "Unit test"
-    command: go test ./... -v -timeout 1m -count=1
+    command: ./.buildkite/run_tests.sh
     concurrency_group: buildkite-sample/go-tasks
     concurrency: 1
-  - block: "Build"
-    prompt: "Testing out stuff"
-    fields:
-      - text: "Name"
-        key: "parameter-name"
-  - label: "Get parameters"
-    command: buildkite-agent meta-data get "parameter-name"
   - label: "Build"
     command: go build .
     concurrency_group: buildkite-sample/go-tasks
