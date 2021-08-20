@@ -14,13 +14,6 @@ steps:
     command: ./.buildkite/run_tests.sh
     concurrency_group: buildkite-sample/go-tasks
     concurrency: 1
-  - block: "Build"
-    prompt: "Testing out stuff"
-    fields:
-      - text: "Name"
-        key: "parameter-name"
-  - label: "Get parameters"
-    command: buildkite-agent meta-data get "parameter-name"
   - label: "Build"
     command: go build .
     concurrency_group: buildkite-sample/go-tasks
