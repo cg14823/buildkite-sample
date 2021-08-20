@@ -1,4 +1,4 @@
-package buildkite_sample
+package main
 
 import "fmt"
 

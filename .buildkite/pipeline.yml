@@ -6,10 +6,21 @@ steps:
     command: go version
     concurrency_group: buildkite-sample/version
     concurrency: 2
+  - label: "Go lint"
+    command: golangci-lint run ./...
+    concurrency: 1
+    concurrency_group: buildkite-sample/go-tasks
   - label: "Unit test"
     command: go test ./... -v -timeout 1m -count=1
     concurrency_group: buildkite-sample/go-tasks
     concurrency: 1
+  - block: "Build"
+    prompt: "Testing out stuff"
+    fields:
+      - text: "Name"
+        key: "parameter-name"
+  - label: "Get parameters"
+    command: buildkite-agent metadata get "parameter-name"
   - label: "Build"
     command: go build .
     concurrency_group: buildkite-sample/go-tasks
