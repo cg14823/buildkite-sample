@@ -10,6 +10,7 @@ steps:
     command: golangci-lint run ./...
     concurrency: 1
     concurrency_group: buildkite-sample/go-tasks
+  - block: "Test"
   - label: "Unit test"
     command: ./.buildkite/run_tests.sh
     concurrency_group: buildkite-sample/go-tasks
