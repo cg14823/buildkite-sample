@@ -7,9 +7,14 @@ steps:
     concurrency_group: buildkite-sample/version
     concurrency: 2
   - label: "Go lint"
+    key: "lint"
     command: golangci-lint run ./...
     concurrency: 1
     concurrency_group: buildkite-sample/go-tasks
+  - label: "Trigger down stream"
+    trigger: down-stream-pipeline
+    depends_on:
+      - "lint"
   - block: "Test"
     prompt: "Do you want to test?"
     blocked_state: "running"
