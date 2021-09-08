@@ -1,5 +1,8 @@
+echo "Clearing test cache"
+go clean -testcache
+
 echo "Running Go tests"
-gotestsum --junitfile test.xml -- -count=1
+gotestsum --format testname --junitfile test.xml
 
 exit_code=$?
 
