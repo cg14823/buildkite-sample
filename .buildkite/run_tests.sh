@@ -1,5 +1,5 @@
 echo "Running Go tests"
-gotestsum --junitfile test.xml
+gotestsum --junitfile test.xml -- -count=1
 
 exit_code=$?
 
