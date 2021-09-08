@@ -2,8 +2,7 @@ agents:
   queue: "carlos"
 
 steps:
-  - label: "Go version"
-    command: go version
+  - command: go version
     concurrency_group: buildkite-sample/version
     concurrency: 2
   - label: "Go lint"
