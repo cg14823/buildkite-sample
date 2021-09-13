@@ -14,10 +14,10 @@ steps:
     trigger: down-stream-pipeline
     depends_on:
       - "lint"
-  - block: "Test"
-    prompt: "Do you want to test?"
-    blocked_state: "running"
-    key: "test-block"
+#   - block: "Test"
+#     prompt: "Do you want to test?"
+#     blocked_state: "running"
+#     key: "test-block"
   - label: "Unit test"
     command: ./.buildkite/run_tests.sh
     concurrency_group: buildkite-sample/go-tasks
