@@ -5,6 +5,7 @@ steps:
   - command: go version
     concurrency_group: buildkite-sample/version
     concurrency: 2
+    if: build.message !~ /skip/
   - label: "Go lint"
     key: "lint"
     command: golangci-lint run ./...
