@@ -18,10 +18,10 @@ steps:
 #     prompt: "Do you want to test?"
 #     blocked_state: "running"
 #     key: "test-block"
-  - label: "Unit test"
-    command: ./.buildkite/run_tests.sh
-    concurrency_group: buildkite-sample/go-tasks
-    concurrency: 1
+#   - label: "Unit test"
+#     command: ./.buildkite/run_tests.sh
+#     concurrency_group: buildkite-sample/go-tasks
+#     concurrency: 1
   # - label: "Build"
   #   command: go build .
   #   concurrency_group: buildkite-sample/go-tasks
