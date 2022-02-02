@@ -1,6 +1,2 @@
 # buildkite-sample
  
-
-
-
-
